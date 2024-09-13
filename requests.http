@@ -1,0 +1,30 @@
+### GET request to example server
+GET localhost:9001
+
+### Create new Book
+POST localhost:9001/books
+Content-Type: application/json
+
+{
+  "author": "Lyra Silverstar",
+  "title": "Northern Lights",
+  "isbn": "1234567891",
+  "price": 9.90
+}
+
+### Get created Book
+GET localhost:9001/books/1234567891
+
+### Get Books
+GET localhost:9001/books
+
+### Error, no title
+POST localhost:9001/books
+Content-Type: application/json
+
+{
+  "author": "Lyra Silverstar",
+  "isbn": "123ABC456Z",
+  "price": 9.90
+}
+
