@@ -18,13 +18,13 @@ jobs:
           java-version: 21
           cache: gradle
       - name: Code vulnerability scanning
-        uses: anchore/scan-action@v3
+        uses: anchore/scan-action@v4
         id: scan
         with:
           path: "${{ github.workspace }}"
           fail-build: true
 #          severity-cutoff: high
-          grype-version: v0.80.1
+#          grype-version: v0.80.1
       - name: Upload vulnerability report
         uses: github/codeql-action/upload-sarif@v3
         if: success() || failure()
