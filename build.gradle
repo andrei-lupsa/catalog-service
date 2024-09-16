@@ -13,7 +13,7 @@ java {
     }
 }
 
-ext['spring-framework.version'] = '6.1.13'
+//ext['spring-framework.version'] = '6.1.13'
 
 configurations {
     compileOnly {
