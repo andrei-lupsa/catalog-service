@@ -1,6 +1,9 @@
 ### GET request to example server
 GET localhost:9001
 
+### Refresh configuration
+POST localhost:9001/actuator/refresh
+
 ### Create new Book
 POST localhost:9001/books
 Content-Type: application/json
