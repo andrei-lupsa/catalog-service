@@ -12,7 +12,8 @@ import static org.mockito.BDDMockito.given;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@WebMvcTest(BookController.class)
+@WebMvcTest(controllers = BookController.class,
+        properties = "spring.cloud.config.enabled=false")
 class BookControllerMvcTests {
 
     @Autowired
