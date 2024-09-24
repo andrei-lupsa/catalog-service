@@ -5,6 +5,7 @@ metadata:
   labels:
     app: catalog-service
 spec:
+  replicas: 1
   selector:
     matchLabels:
       app: catalog-service
@@ -15,7 +16,7 @@ spec:
     spec:
       containers:
         - name: catalog-service
-          image: ghcr.io/andrei-lupsa/catalog-service
+          image: catalog-service
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 9001
@@ -28,3 +29,7 @@ spec:
               value: testdata
             - name: SPRING_CLOUD_CONFIG_ENABLED
               value: "false"
+          lifecycle:
+            preStop:
+              exec:
+                command: [ "sh", "-c", "sleep 5" ]
