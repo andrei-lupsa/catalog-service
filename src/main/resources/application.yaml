@@ -49,13 +49,15 @@ management:
         include:
           - health
           - prometheus
-  #          - refresh
   endpoint:
     health:
       show-details: always
       show-components: always
       probes:
         enabled: true #alway enable readiness and liveness probes, not just for Kubernetes
+  metrics:
+    tags:
+      application: ${spring.application.name}
 
 logging:
   level:
