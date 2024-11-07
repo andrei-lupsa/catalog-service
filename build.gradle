@@ -67,6 +67,8 @@ bootRun {
 
 bootBuildImage {
     docker {
+        environment["BP_HEALTH_CHECKER_ENABLED"] = "true"
+        buildpacks = ["urn:cnb:builder:paketo-buildpacks/java", "gcr.io/paketo-buildpacks/health-checker:latest"]
         if (project.hasProperty('docker.url') && project.hasProperty('docker.username')) {
             imageName = "${project.properties['docker.url']}/${project.properties['docker.username']}/${project.name}:${project.version}"
         }
