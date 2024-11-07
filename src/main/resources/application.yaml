@@ -48,7 +48,7 @@ management:
       exposure:
         include:
           - health
-          - refresh
+#          - refresh
 logging:
   level:
     org:
