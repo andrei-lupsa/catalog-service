@@ -61,7 +61,7 @@ management:
 
 logging:
   level:
-    sql: debug
-    web: debug
+    sql: info
+    web: info
   pattern:
     level: "%5p [${spring.application.name},%X{trace_id},%X{span_id}]"
