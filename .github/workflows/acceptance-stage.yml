@@ -9,3 +9,5 @@ concurrency: acceptance
 jobs:
   acceptance-stage:
     uses: andrei-lupsa/polar-deployment/.github/workflows/acceptance-stage.yml@master
+    with:
+      app_repo: catalog-service
