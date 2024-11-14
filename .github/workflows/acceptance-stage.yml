@@ -11,4 +11,5 @@ jobs:
     uses: andrei-lupsa/polar-deployment/.github/workflows/acceptance-stage.yml@master
     with:
       app_repo: catalog-service
-      dispatch_token: ${{ secrets.DISPATCH_TOKEN }}
+    secrets:
+      DISPATCH_TOKEN: ${{ secrets.DISPATCH_TOKEN }}
