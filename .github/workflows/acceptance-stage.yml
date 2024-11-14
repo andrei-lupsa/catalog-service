@@ -4,6 +4,10 @@ on:
     workflows: ["Commit Stage"]
     types: [completed]
     branches: master
+  workflow_call:
+    secrets:
+      DISPATCH_TOKEN:
+        required: true
 concurrency: acceptance
 
 jobs:
